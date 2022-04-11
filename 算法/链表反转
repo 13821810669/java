@@ -1,0 +1,19 @@
+ //单链表的反转
+    public void reverse(){
+        HeroNode tag=new HeroNode("",0);
+
+        HeroNode temp=head.next;
+
+        HeroNode node=new HeroNode(head.next.getName(),head.next.getAge());
+        node.next=null;
+        while (temp!=null&&temp.next!=null){
+
+            tag=node;
+            temp=temp.next;
+            node=new HeroNode(temp.getName(),temp.getAge());
+            node.next=tag;
+        }
+
+        System.out.println("跳出了循环");
+        head.next=node;
+    }
